@@ -78,7 +78,7 @@ clean: $(IRQ_DEFN_FILES:=.cleanhdr) $(LIB_DIRS:=.clean) $(EXAMPLE_DIRS:=.clean) 
 %.clean:
 	$(Q)if [ -d $* ]; then \
 		printf "  CLEAN   $*\n"; \
-		$(MAKE) -C $* clean SRCLIBDIR="$(SRCLIBDIR)" || exit $?; \
+		$(MAKE) -C $* clean SRCLIBDIR=$(SRCLIBDIR) || exit $?; \
 	fi;
 
 
